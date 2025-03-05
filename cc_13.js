@@ -41,3 +41,19 @@ function createEmployee(name, position) {
 createEmployee("John Doe", "Manager");
 createEmployee("Mike Miller", "Supervisor");
 createEmployee("Jerry Wilken", "Electrician");
+
+/////////////////////////////////////////////////////////////
+// Task 3: Converting NodeLists to Arrays for Bulk Updates //
+/////////////////////////////////////////////////////////////
+
+console.log("--------------------------------------");
+console.log("Task 3: Converting NodeLists to Arrays for Bulk Updates");
+
+const cards = document.querySelectorAll(".employee-card");
+
+if (cards) {
+    const cardsArray = Array.from(cards);
+    cardsArray.forEach(card => {
+        card.style.backgroundColor = "lightcoral";
+    });
+}
