@@ -29,8 +29,9 @@ function createEmployee(name, position) {
         
         const button = document.createElement('button');
         button.textContent = 'Remove';
-        button.addEventListener('click', () => {
+        button.addEventListener('click', (event) => {
             employeeContainer.removeChild(card);
+            event.stopPropagation();
         });
         card.appendChild(button);
 
@@ -57,3 +58,20 @@ if (cards) {
         card.style.backgroundColor = "lightcoral";
     });
 }
+
+////////////////////////////////////////////////////////////////////////
+// Task 4: Implementing Removal of Employee Cards with Event Bubbling //
+////////////////////////////////////////////////////////////////////////
+
+console.log("--------------------------------------");
+console.log("Task 4: Implementing Removal of Employee Cards with Event Bubbling");
+
+// Added click event listener (remove) in createEmployee method
+
+const employeeContainer = document.getElementById("employeeContainer");
+
+employeeContainer.addEventListener('click', () => {
+    console.log(`employee clicked`);
+});
+
+// Added stopPropagation() to button click listener
